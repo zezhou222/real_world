@@ -1,0 +1,13 @@
+
+.page-num{
+  text-align: center;
+}
+.page-num a {
+  background-color: #ddd;
+  padding: 1rem;
+  margin: 1rem;
+}
+
+.page-num .active{
+  background-color: #aaa;
+}
