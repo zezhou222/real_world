@@ -190,11 +190,15 @@ export default {
         tab === 'feed' ? apiFeedArticlesList(searchData) : apiArticlesList(searchData),
         apiTag(),
       ])
-      // console.log("apiArticlesList", resAritcle)
-      articleList = resAritcle.articles
-      articleSum = resAritcle.articlesCount
+      console.log("apiArticlesList", resAritcle && resAritcle.articlesCount)
+      if (resAritcle){
+        articleList = resAritcle.articles
+        articleSum = resAritcle.articlesCount
+      }
       // console.log("apiTag", resTag)
-      tagList = resTag.tags.slice(0, 10)
+      if (resTag){
+        tagList = resTag.tags.slice(0, 10)
+      }
     }catch(err){
       console.log("err", err)
     }

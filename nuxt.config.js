@@ -31,9 +31,7 @@ export default {
   proxy: {
     "/api": {
       target: "http://realworld.api.fed.lagounews.com",
-      pathRewrite: {
-        changeOrigin: true,
-      }
+      changeOrigin: true
     }
   },
   build: {

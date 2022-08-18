@@ -8,6 +8,7 @@ const myRequest = axios.create({
 export const request = (url, data, method='POST') => {
   if (process.server){
     url = 'http://realworld.api.fed.lagounews.com' + url
+    // console.log("server requests, url change", url)
   }
   let reqDict = {
     url,
@@ -28,6 +29,7 @@ export default function ({store}){
   console.log("axios plugin run.")
   // 请求拦截
   myRequest.interceptors.request.use(config=>{
+    console.log("config url", config.url)
     // token携带
     config.headers['Authorization'] = `Token ${store.state.user.user.token || ''}`
     // console.log("requests config", config)
@@ -38,8 +40,9 @@ export default function ({store}){
 
   // 响应拦截
   myRequest.interceptors.response.use(res=>{
+    // console.log("interceptors res", res)
     // 正常情况
-    return res.data
+    return res.data || res
   },err=>{
     return Promise.reject(err)
   })
