@@ -12,14 +12,14 @@ export default {
       { name: 'format-detection', content: 'telephone=no' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'stylesheet', type: 'text/css', href: '/index.css' },
+      { rel: 'stylesheet', type: 'text/css', href: '/main.css' },
     ]
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
-    "@/static/main.css",
-    "@/static/index.css",
   ],
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
